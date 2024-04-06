@@ -1,10 +1,10 @@
 class Solution:
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+    def topKFrequent(self, nums: list[int], k: int) -> list[int]:
         # build a freq counter of values
         # return keys of highest k values as array
         top_k_values = []
 
-        def _get_counter(nums: List[int]):
+        def _get_counter(nums: list[int]) -> dict[int, int]:
             out = {}
             for num in nums:
                 out[num] = out.get(num) + 1 if out.get(num) else 1
