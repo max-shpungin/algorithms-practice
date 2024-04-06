@@ -1,0 +1,17 @@
+{
+  "name": "rithmschool-start-ts-basic",
+  "version": "1.0.0",
+  "homepage": "https://github.com/rithmschool/start/",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node $npm_package_main.js",
+    "start:debug": "node --inspect-brk main.js",
+    "test": "vitest ts",
+    "test:cov": "vitest ts --coverage",
+    "test:debug": "vitest ts --run --inspect-brk --no-file-parallelism"
+  },
+  "devDependencies": {
+    "vitest": "^1.2.2"
+  }
+}

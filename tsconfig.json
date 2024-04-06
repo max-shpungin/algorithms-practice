@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "ES2021",
+        "strict": true,
+        "moduleResolution": "Node",
+        "skipLibCheck": true,
+        "outDir": "out",
+        "sourceMap": true
+    },
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"factorial.js","sourceRoot":"","sources":["../factorial.ts"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;GAaG;AAEH,SAAS,SAAS,CAAC,GAAW;IAC5B,IAAI,GAAG,IAAI,CAAC;QACV,OAAO,CAAC,CAAC;IAEX,OAAO,GAAG,GAAG,SAAS,CAAC,GAAG,GAAC,CAAC,CAAC,CAAC;AAChC,CAAC;AAED,eAAe,SAAS,CAAC"}
