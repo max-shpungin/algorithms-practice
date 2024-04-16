@@ -1,0 +1,77 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        if not lists:
+            return
+        # push all ll vals into a single array
+        all_values = []
+
+        for list_node in lists:
+            while list_node:
+                all_values.append(list_node.val)
+                list_node = list_node.next
+
+        # sort the single array
+        all_values_sorted = self._mergeSort(all_values)
+
+        if not all_values_sorted:
+            return
+
+        # traverse array and create a new node for every element, with next elem as next node
+        head = self.listify(all_values_sorted)
+
+        return head
+
+    def listify(self, values):
+        left = ListNode(-1)
+        head = ListNode(values[0])
+        left.next = head
+
+        for val in values[1:]:
+            head.next = ListNode(val)
+            head = head.next
+
+        return left.next
+
+
+    def _mergeSort(self, values):
+        """
+            Perform merge sort on list of values and return new sorted list
+        """
+        if len(values) <= 1:
+            return values
+
+        mid = len(values) // 2
+        left = self._mergeSort(values[:mid])
+        right = self._mergeSort(values[mid:])
+
+        def _mergeLists(left,right):
+            leftIdx = rightIdx = 0
+            merged = []
+
+            while leftIdx < len(left) and rightIdx < len(right):
+                if left[leftIdx] <= right[rightIdx]:
+                    merged.append(left[leftIdx])
+                    leftIdx += 1
+                else:
+                    merged.append(right[rightIdx])
+                    rightIdx += 1
+            if leftIdx < len(left):
+                merged.extend(left[leftIdx:])
+            else:
+                merged.extend(right[rightIdx:])
+
+            return merged
+
+        return _mergeLists(left,right)
+
+
+
+
+
+
+
